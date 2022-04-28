@@ -1,11 +1,12 @@
 <invoice>
     <div class="well well-sm">
         <div class="row">
-            <div class="col-xs-6">
-                <input id="client" class="form-control typeahead" type="text" placeholder="Cliente" />
+
+            <div class="col-xs-4">
+                <input id="ci" class="form-control" type="text" placeholder="Cedula" value="{cedula}" />
             </div>
-            <div class="col-xs-2">
-                <input class="form-control" type="text" placeholder="Ruc" readonly value="{ruc}" />
+            <div class="col-xs-4">
+                <input id="client" class="form-control typeahead" type="text" readonly placeholder="Cliente" value="{name}" />
             </div>
             <div class="col-xs-4">
                 <input class="form-control" type="text" placeholder="Dirección" readonly value="{address}" />
@@ -140,22 +141,22 @@
             });
 
             self.total = total;
-            self.subTotal = parseFloat(total / 1.18);
+            self.subTotal = parseFloat(total * 1.12);
             self.iva = parseFloat(total - self.subTotal);
         }
 
         function __clientAutocomplete(){
-            var client = $("#client"),
+            var client = $("#ci"),
                 options = {
                 url: function(q) {
                     return baseUrl('invoice/findClient?q=' + q);
                 },
-                getValue: 'name',
+                getValue: 'cedula',
                 list: {
                     onClickEvent: function() {
                         var e = client.getSelectedItemData();
                         self.client_id = e.id;
-                        self.ruc = e.ruc;
+                        self.name = e.name;
                         self.address = e.address;
 
                         self.update();

@@ -14,7 +14,7 @@
                         <input class="form-control typeahead" type="text" readonly value="{{ $model->client->name }}" />
                     </div>
                     <div class="col-xs-2">
-                        <input class="form-control" type="text" readonly value={{ $model->client->ruc }} />
+                        <input class="form-control" type="text" readonly value={{ $model->client->cedula }} />
                     </div>
                     <div class="col-xs-4">
                         <input class="form-control" type="text" readonly value={{ $model->client->address }} />

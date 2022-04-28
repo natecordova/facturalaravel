@@ -37,8 +37,8 @@
             <td>{{ $model->client->name }}</td>
         </tr>
         <tr>
-            <th>Ruc</th>
-            <td>{{ $model->client->ruc }}</td>
+            <th>Cedula</th>
+            <td>{{ $model->client->cedula }}</td>
         </tr>
         <tr>
             <th>Dirección</th>

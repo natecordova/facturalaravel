@@ -10,7 +10,7 @@ class Initalization extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('ruc');
+            $table->string('cedula'); 
             $table->string('address');
             $table->timestamps();
         });
@@ -53,8 +53,8 @@ class Initalization extends Migration
 
         // Default data
         DB::table('clients')->insert([
-            ['name' => 'Eduardo Rodriguez', 'ruc' => '12345678912', 'address' => 'Av. Los informáticos 107'],
-            ['name' => 'Juan Perez', 'ruc' => '12345678912', 'address' => 'Av. Los informáticos 108'],
+            ['name' => 'Eduardo Rodriguez', 'cedula' => '12345678912', 'address' => 'Av. Los informáticos 107'],
+            ['name' => 'Juan Perez', 'cedula' => '12345678912', 'address' => 'Av. Los informáticos 108'],
         ]);
 
         DB::table('products')->insert([
@@ -65,6 +65,6 @@ class Initalization extends Migration
 
     public function down()
     {
-
+        Schema::dropIfExists('clients');
     }
 }

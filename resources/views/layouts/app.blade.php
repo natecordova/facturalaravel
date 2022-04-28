@@ -82,7 +82,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="{{asset('ini.js')}}"></script>
     <script src="{{asset('bower_components/riot/riot.min.js')}}"></script>
-    <script src="{{asset('bower_components/riot/riot+compiler.min.js')}}"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/riot@4.0.5/riot+compiler.min.js"></script>-->
+    <!--<script src="{{asset('bower_components/riot/riot+compiler.min.js')}}"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/riot/2.6.9/riot+compiler.min.js"></script> 
     <script src="{{asset('bower_components/EasyAutocomplete//dist/jquery.easy-autocomplete.min.js')}}"></script>
 
     @yield('bottom')
